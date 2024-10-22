@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #2c3e50;
+    padding: 20px;
+    color: white;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: background-color 0.3s;
+}
+
+.sidebar:hover {
+    background-color: #34495e;
+}
+
+.sidebar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.content {
+    flex-grow: 1;
+    margin-left: 220px; /* Width of sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.dashboard, .leads, .analytics, .reports {
+    margin: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+}
+
+.widgets {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.widget {
+    flex: 1 1 30%; /* Responsive flexibility */
+    margin: 10px;
+    background: #ecf0f1;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
+
+
+.charts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.chart-container {
+    flex: 1 1 45%; /* Retain responsive flexibility */
+    margin: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    max-width: 80%; /* Set a max width */
+    max-height: 100%; /* Set a max height */
+    overflow: auto; /* Ensure content doesn't overflow */
+}
+
+.charts {
+    display: flex;
+    justify-content: space-around; /* Space charts more evenly */
+    flex-wrap: wrap;
+}
+
+
+.report-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.report-button:hover {
+    background-color: #2980b9;
+}
+
+.widget-form {
+    display: flex;
+    gap: 10px; /* Space between inputs */
+    margin-bottom: 20px;
+}
+
+.widget-form input {
+    flex: 1; /* Allow inputs to fill available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.widget-form button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.widget-form button:hover {
+    background-color: #27ae60;
+}
+
+.widgets {
+    display: flex;
+    flex-wrap: wrap; /* Allow widgets to wrap onto the next line */
+    gap: 10px; /* Space between widgets */
+}
+
+.widget-container {
+    flex: 1 1 30%; /* Set a base width for widgets */
+    margin: 10px;
+}
