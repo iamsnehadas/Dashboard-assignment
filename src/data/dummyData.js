@@ -1,4 +1,3 @@
-// src/data/dummyData.js
 export const dummyLeads = [
     { id: 1, name: 'John Doe', email: 'john@example.com', status: 'Contacted', dateAdded: '2024-01-10', leadValue: 1000 },
     { id: 2, name: 'Jane Smith', email: 'jane@example.com', status: 'Pending', dateAdded: '2024-01-15', leadValue: 1500 },

@@ -1,4 +1,3 @@
-// src/components/Analytics.js
 import React from 'react';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import { 
@@ -28,13 +27,13 @@ ChartJS.register(
 );
 
 const Analytics = () => {
-    // Calculate lead status counts for Bar and Pie Charts
+    
     const leadStatusCounts = dummyLeads.reduce((acc, lead) => {
         acc[lead.status] = (acc[lead.status] || 0) + 1;
         return acc;
     }, {});
 
-    // Prepare data for the Bar Chart
+    
     const barChartData = {
         labels: Object.keys(leadStatusCounts),
         datasets: [
@@ -46,7 +45,7 @@ const Analytics = () => {
         ],
     };
 
-    // Prepare data for the Pie Chart
+    
     const pieChartData = {
         labels: Object.keys(leadStatusCounts),
         datasets: [
@@ -57,25 +56,24 @@ const Analytics = () => {
         ],
     };
 
-    // Preparing data for Converted Leads Rate Over Time
+    
     const monthlyData = {};
     dummyLeads.forEach(lead => {
         const month = new Date(lead.dateAdded).toLocaleString('default', { month: 'long' }); // Extract month from date
         monthlyData[month] = monthlyData[month] || { count: 0, converted: 0, totalValue: 0 };
 
-        // Count total leads
+        
         monthlyData[month].count += 1;
 
-        // Count converted leads and total lead value
+        
         if (lead.status === 'Converted') {
             monthlyData[month].converted += 1;
-            monthlyData[month].totalValue += lead.leadValue || 0; // Assuming leadValue is part of dummyLeads
+            monthlyData[month].totalValue += lead.leadValue || 0; 
         } else {
-            monthlyData[month].totalValue += lead.leadValue || 0; // Add lead value for all leads
+            monthlyData[month].totalValue += lead.leadValue || 0; 
         }
     });
 
-    // Calculate Converted Leads Rate
     const lineChartData = {
         labels: Object.keys(monthlyData),
         datasets: [
