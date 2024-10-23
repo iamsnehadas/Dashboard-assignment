@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <h2>Ezy Metrics</h2>
+            <h2>EzyMetrics</h2>
             <nav>
                 <ul>
                     <li><Link to="/">Dashboard</Link></li>
